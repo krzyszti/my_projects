@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="20" tilewidth="70" tileheight="70">
+ <tileset firstgid="1" name="tileset" tilewidth="70" tileheight="70">
+  <image source="tileset.png" width="700" height="1300"/>
+ </tileset>
+ <layer name="set" width="50" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAIA6BXs4L9w9jjwkYCAADAR1tySh4ErBy3
+  </data>
+ </layer>
+ <objectgroup name="triggers">
+  <properties>
+   <property name="blockers" value="tldr"/>
+  </properties>
+  <object x="0" y="1260" width="3500" height="140">
+   <properties>
+    <property name="blockers" value="tldr"/>
+   </properties>
+  </object>
+  <object x="140" y="1120" width="70" height="70">
+   <properties>
+    <property name="player" value="yes"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
