@@ -1,0 +1,15 @@
+This is very simple platform game with basic animations.
+I made it based on tutorial from Richard Jones.
+https://www.youtube.com/watch?v=bMt47wvK6u0
+
+I also used tmx script from 
+https://bitbucket.org/r1chardj0n3s
+
+Tileset and sprites are from
+http://opengameart.org/content/platformer-art-deluxe
+
+To play game, run game.py
+
+In current version all you can do is walk and jump (space).
+
+Game was written in pygame.
