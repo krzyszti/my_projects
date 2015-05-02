@@ -1,0 +1,7 @@
+{% extends 'basic.html' %}
+{% block content %}
+    <div>Hello to my application</div>
+    <div><a href="{% url 'createBand' %}">Create Band</a></div>
+    <div><a href="{% url 'readBand' %}">Read Bands</a></div>
+    <div><a href="{% url 'updateBandPk' %}">Update Band</a></div>
+{% endblock %}

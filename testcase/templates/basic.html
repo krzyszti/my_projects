@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+{% if messages %}
+    <div>
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endif %}
+{% block content %}
+{% endblock %}
+</body>
+</html>
