@@ -2,7 +2,7 @@
 {% block content %}
     <form method="post" name="form">
         {% csrf_token %}
-        {{ form}}
+        {{ form.as_p }}
         <button>Save</button>
         <a href="{% url 'index' %}">Cancel</a>
     </form>

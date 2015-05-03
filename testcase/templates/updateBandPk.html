@@ -1,13 +1,10 @@
 {% extends 'basic.html' %}
 
 {% block content %}
-    <label>Band:
-    <select>
-        {% for item in band_list %}
-            <option name="{{ item.pk }}">{{ item}}</option>
-        {% endfor %}
-    </select>
-    <input type="submit">
-    </label>
+    <form method="post" name="form">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
     <div><a href="{% url 'index' %}">Back</a></div>
 {% endblock %}

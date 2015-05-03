@@ -11,3 +11,10 @@ class CreateBandForm(forms.ModelForm):
             "country": "Country",
             "website": "Website"
         }
+
+class UpdateBandForm(forms.Form):
+    choices = []
+    for band in models.Band.objects.all():
+        choices.append([band.pk, band])
+
+    choice = forms.ChoiceField(choices)
