@@ -1,7 +1,8 @@
 {% extends 'basic.html' %}
 {% block content %}
     <div>Hello to my application</div>
-    <div><a href="{% url 'createBand' %}">Create Band</a></div>
-    <div><a href="{% url 'readBand' %}">Read Bands</a></div>
-    <div><a href="{% url 'updateBandPk' %}">Update Band</a></div>
+    <div id="div1"><a href="{% url 'createBand' %}">Create Band</a></div>
+    <div id="div2"><a href="{% url 'readBand' %}">Read Bands</a></div>
+    <div id="div3"><a href="{% url 'updateBandPk' %}">Update Band</a></div>
+    <div><a href="{% url 'deleteBandPk' %}">Delete Band</a></div>
 {% endblock %}

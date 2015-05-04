@@ -12,7 +12,7 @@ class CreateBandForm(forms.ModelForm):
             "website": "Website"
         }
 
-class UpdateBandForm(forms.Form):
+class ChoiceBandForm(forms.Form):
     choices = []
     for band in models.Band.objects.all():
         choices.append([band.pk, band])

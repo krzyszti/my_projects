@@ -8,4 +8,5 @@ urlpatterns = patterns('crud.views',
                        url('^update/band/(?P<pk>[\d]+)$', 'updateBand', name='updateBand'),
                        url('^delete/band/(?P<pk>[\d]+)$', 'deleteBand', name='deleteBand'),
                        url(r'^update/band/$', 'updateBandPk', name='updateBandPk'),
+                       url(r'^delete/band/$', 'deleteBandPk', name='deleteBandPk'),
                        )

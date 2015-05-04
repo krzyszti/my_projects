@@ -1,7 +1,8 @@
 from django.core.urlresolvers import reverse_lazy
+from django.shortcuts import redirect
 from django.views.generic import CreateView, TemplateView, ListView, UpdateView, DeleteView, FormView
 from django.contrib.messages.views import SuccessMessageMixin
-from crud.forms import CreateBandForm, UpdateBandForm
+from crud.forms import CreateBandForm, ChoiceBandForm
 from crud import models
 
 
@@ -30,16 +31,28 @@ readBand = ReadBand.as_view()
 
 class UpdateBandPk(FormView):
     template_name = 'updateBandPk.html'
-    form_class = UpdateBandForm
-    success_url = reverse_lazy('updateBand')
+    form_class = ChoiceBandForm
+    success_url = reverse_lazy('updateBand', kwargs={"pk": 1})
 
     def post(self, request, *args, **kwargs):
         response = super().post(self, request, *args, **kwargs)
         pk = request.POST["choice"]
-        self.success_url.kwargs = {"pk": pk}
-        return response
+        return redirect ("updateBand", pk=pk )
 
 updateBandPk = UpdateBandPk.as_view()
+
+
+class DeleteBandPk(FormView):
+    template_name = 'deleteBandPk.html'
+    form_class = ChoiceBandForm
+    success_url = reverse_lazy('deleteBand', kwargs={"pk": 1})
+
+    def post(self, request, *args, **kwargs):
+        response = super().post(self, request, *args, **kwargs)
+        pk = request.POST["choice"]
+        return redirect ("deleteBand", pk=pk )
+
+deleteBandPk = DeleteBandPk.as_view()
 
 
 class UpdateBand(SuccessMessageMixin, UpdateView):
