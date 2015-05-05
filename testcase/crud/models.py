@@ -1,1 +1,1 @@
-from base.models import Band
+from base.models import Band, Genre

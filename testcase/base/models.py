@@ -4,12 +4,18 @@ from django.db import models
 class Genre(models.Model):
     name = models.CharField(max_length=30)
 
+    class Meta:
+        ordering = ('name',)
+
 
 class Band(models.Model):
     name = models.CharField(max_length=30)
     city = models.CharField(max_length=60)
     country = models.CharField(max_length=50)
     website = models.URLField()
+
+    class Meta:
+        ordering = ('name',)
 
     def __str__(self):
         return self.name
