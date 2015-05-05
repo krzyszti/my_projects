@@ -40,7 +40,7 @@ class UpdateBandPk(FormView):
     success_url = reverse_lazy('updateBand', kwargs={"pk": 1})
 
     def post(self, request, *args, **kwargs):
-        pk = request.POST["choice"]
+        pk = request.POST["name"]
         return redirect("updateBand", pk=pk)
 
 
@@ -53,7 +53,7 @@ class DeleteBandPk(FormView):
     success_url = reverse_lazy('deleteBand', kwargs={"pk": 1})
 
     def post(self, request, *args, **kwargs):
-        pk = request.POST["choice"]
+        pk = request.POST["name"]
         return redirect("deleteBand", pk=pk)
 
 
