@@ -1,0 +1,6 @@
+Instalation for windows -> https://www.python.org/downloads
+Python 3
+
+pip install django djangorestframework
+
+On folder project root folder python3 manage.py migrate
