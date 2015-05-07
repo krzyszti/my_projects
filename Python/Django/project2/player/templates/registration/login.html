@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'index' %}" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+        <div>
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+        {%  endfor %}
+    <input type="submit">
+    </form>
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'index' %}">Back</a>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles i18n %}
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    <li>
+        <a href="{% url 'logout' %}">Logout</a>
+    </li>
+{% else %}
+    <li>
+        <a href="{% url 'login' %}">Login</a>
+    </li>
+    <li>
+        <a href="{% url 'register' %}">Register</a>
+    </li>
+{% endif %}
+{% if messages %}
+    <div>
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endif %}
+{% block content %}
+{% endblock %}
+</body>
+</html>
