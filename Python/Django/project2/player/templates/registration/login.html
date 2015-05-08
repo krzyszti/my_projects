@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 
 {% block content %}
-    <form action="{% url 'index' %}" method="POST">
+  <div class="col-xs-12 col-sm-8 col-xs-push-2">
+    <form class="form" method="POST">
     {% csrf_token %}
-    {% for field in form %}
-        <div>
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
-        </div>
-        {%  endfor %}
+    {% bootstrap_form form %}
     <input type="submit">
     </form>
     <a href="{% url 'register' %}">Register</a>
     <a href="{% url 'index' %}">Back</a>
+  </div>
 {% endblock %}
