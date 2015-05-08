@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-{% load staticfiles i18n %}
+{% load bootstrap3 staticfiles i18n %}
+{% load url from future %}
 <html>
 <head>
+    {% bootstrap_css %}
     <title></title>
 </head>
 <body>
+  <ul>
 {% if request.user.is_authenticated %}
     <li>
         <a href="{% url 'logout' %}">Logout</a>
@@ -16,6 +19,7 @@
     <li>
         <a href="{% url 'register' %}">Register</a>
     </li>
+  </ul>
 {% endif %}
 {% if messages %}
     <div>
@@ -26,7 +30,9 @@
     </ul>
     </div>
 {% endif %}
-{% block content %}
+<div class="container">
+  {% block content %}
+</div>
 {% endblock %}
 </body>
 </html>
