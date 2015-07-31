@@ -47,9 +47,10 @@ Elements of input arrays can be modified.
 def solution(A):
     i = -1
     while i>=-len(A):
-        if A[:i].count(A[i])==0:
+        if A[i] in A[:i]:
+            i-=1
+        else:
             return A.index(A[i])
-        i-=1
 
 
 A = [2, 2, 1, 0, 1, 8, 9, 9,9]
