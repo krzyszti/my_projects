@@ -42,7 +42,7 @@ Complexity:
 Elements of input arrays can be modified.
 
 ---
-76% solution
+# 76% solution
 def solution(A):
     i = -1
     while i>=-len(A):
@@ -50,7 +50,7 @@ def solution(A):
             return A.index(A[i])
         i-=1
 ---
-88% solution
+# 88% solution
 def solution(A):
     i = -1
     while i>=-len(A):
@@ -58,8 +58,8 @@ def solution(A):
             i-=1
         else:
             return A.index(A[i])
-'''
-
+---
+# 96% solution
 def solution(A):
     i = 0
     a = list(A)
@@ -68,6 +68,15 @@ def solution(A):
         if not(v in A):
             return a.index(v)
         i += 1
+'''
+from collections import Counter
+def solution(A):
+    v = Counter()
+    for e in A:
+        if not(e in v):
+            v[e] += 1
+            i = e
+    return A.index(i)
 
 A = [2, 2, 1, 0, 1, 8, 9, 9,9]
 
