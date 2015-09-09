@@ -33,22 +33,33 @@ Complexity:
         expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 Elements of input arrays can be modified.
 */
-
 using System;
 using System.Linq;
 
-class Solution {
-    public int solution(int[] A) {
-        int s = A.Sum()-A[0];
-        int r = A[0];
-        int result = Math.Abs(s-r);
-        for(int i=1;i < A.Length - 1;i++){
-            s = s - A[i];
-            r = r+ A[i];
-            if (Math.Abs(s-r)<result){
-                result = Math.Abs(s-r);
-            }
-        }
-        return result;
-    }
+
+class MainClass {
+	public static int solution(int n, int[] numbers){
+		int sum = 0;
+		for(int i=0;i<n;i++){
+			sum = sum + numbers[i];
+		}
+		int f = n - sum;
+		if (f < 0){
+			f = 0;
+		}
+		return f;
+	}
+	public static void Main(string[] args){
+		int T = Convert.ToInt32(Console.ReadLine());
+		for(int i=0;i<T;i++){
+			string tmp = Console.ReadLine();
+			int n = Convert.ToInt32(new string(tmp[0], 1));
+			int[] numbers = new int[n+1];
+			for(int j=0;j<tmp.Length-1;j++){
+				numbers[j] = Convert.ToInt32(tmp[j+2]);
+			}
+			int f = solution(n, numbers);
+			Console.WriteLine ("Case #{0}: {1}", i, f);
+		}
+	}
 }
