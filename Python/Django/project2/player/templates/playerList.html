@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <ol>
-        {% for player in player_list %}
-        <li>{{ player.name }} age:{{ player.age }}</li>
-        {% endfor %}
-    </ol>
-{% endblock content %}

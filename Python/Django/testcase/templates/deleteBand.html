@@ -1,9 +1,0 @@
-{% extends 'basic.html' %}
-{% block content %}
-    <form method="post" name="form">
-        {% csrf_token %}
-        <div>Are you sure you want to delete {{ band.name }} from the database?</div>
-        <div><input type="submit"></div>
-    </form>
-    <div><a href="{% url 'index' %}">Cancel</a></div>
-{% endblock %}
