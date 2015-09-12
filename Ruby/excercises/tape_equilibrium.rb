@@ -38,7 +38,7 @@ def solution(a)
   s = a.inject(:+) - a[0]
   r = a[0]
   result = (s - r).abs
-  i = 1;
+  i = 1
   while (i < a.length - 1) do
     s = s - a[i]
     r = r + a[i]
