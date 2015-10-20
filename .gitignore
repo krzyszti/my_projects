@@ -58,3 +58,12 @@ target/
 
 #project settings
 .idea/
+
+# Android applications
+*.apk
+
+# application key
+*.keystore
+
+# ruby irb history
+.irb-history
