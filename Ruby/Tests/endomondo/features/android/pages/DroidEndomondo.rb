@@ -6,8 +6,8 @@ class DroidEndomondo < Calabash::ABase
     send sym, *args, &block
   end
    
-  def self.element element_name
-    define_method element_name.to_s
+  def self.element element_name, &block
+    define_method(element_name.to_s, &block)
   end
   
   def self.back_button

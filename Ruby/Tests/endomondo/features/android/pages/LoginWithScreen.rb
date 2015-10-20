@@ -1,7 +1,7 @@
 class LoginWithScreen < DroidEndomondo
-  element(:login_with_google_button) { "RobotoTextView marked:'Login with Google'" }
-  element(:login_with_facebook_button) { "RobotoTextView marked:'Login with Facebook'" }
-  element(:login_with_email_button) { "RobotoTextView marked:'Login with Email'" }
+  element(:login_with_google_button) { "LoginButtonView id:'plus'" }
+  element(:login_with_facebook_button) { "LoginButtonView id:'facebook'" }
+  element(:login_with_email_button) { "LoginButtonView id:'email'" }
   
   value(:not_logged_in?) { wait_for_elements_exist(
                            [

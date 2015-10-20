@@ -1,19 +1,31 @@
-class LoginWithEmailScreen < DroidEndomondo
-  element(:email_text_field) { "AutoCompleteTextView marked:'email'" }
-  element(:password_text_field) { "EditText marked:'password'" }
-  element(:login_button) { "RobotoTextView marked:'Login'" }
-  element(:error_message) { "TextView marked:'message'" }
+class SignupWithEmailScreen < DroidEndomondo
   
-  value(:not_logged_in?) { element_exists(email_text_field) }
+  element(:name_edit) { "EditText id:'name'" }
+  element(:email_edit) { "AutoCompleteTextView id:'email'" }
+  element(:password_edit) { "EditText id:'password'" }
+  element(:male_radiobutton) { "RadioButton id:'maleRadio'" }
+  element(:female_radiobutton) { "RadioButton id:'femaleRadio'" }
+  element(:signup_button) { "LoginButtonView id:'commit'" }
   
-  action(:touch_login_button) {touch(login_button)}
+  action(:touch_signup_button) {touch(signup_button)}
+  action(:touch_female_radiobutton) { touch(female_radiobutton) }
+  action(:touch_male_radiobutton) { touch(male_radiobutton) }
   
-  trait(:trait) { email_text_field }
+  trait(:trait) { name_edit }
   
-  def login_with(email, password)
-    query(email_text_field, {:setText => email})
-    query(password_text_field, {:setText => password})
-    touch_login_button
+  def signup_with(email, password, name, gender)
+    
+    if gender == 'Male'
+      touch_male_radiobutton
+    elsif gender == 'Female'
+      touch_female_radiobutton
+    end
+    
+    query(name_edit, {:setText => name})
+    query(email_edit, {:setText => email})
+    query(password_edit, {:setText => password})
+    touch_signup_button
+    
   end
   
 end

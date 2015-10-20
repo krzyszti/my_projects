@@ -1,6 +1,12 @@
 class SignupWithScreen < DroidEndomondo
-  element(:signup_with_google) { "RobotoTextView marked:'Sign Up with Google'" }
-  element(:signup_with_facebook) { "RobotoTextView marked:'Sign Up with Facebook'" }
-  element(:signup_with_email) { "RobotoTextView marked:'Sign Up with Email'" }
-  element(:check_box) { "CheckBox marked:'Send me Endomondo updates" }
+  
+  element(:signup_with_google) { "LoginButtonView id:'plus'" }
+  element(:signup_with_facebook) { "LoginButtonView id:'facebook'" }
+  element(:signup_with_email) { "LoginButtonView id:'email'" }
+  element(:check_box) { "CheckBox text:'Send me Endomondo updates" }
+  
+  action(:touch_signup_with_email_button) { touch(signup_with_email) }
+  
+  trait(:trait) { signup_with_email }
+  
 end
