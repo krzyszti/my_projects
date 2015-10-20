@@ -8,11 +8,7 @@ class LoginWithEmailScreen < DroidEndomondo
   
   action(:touch_login_button) {touch(login_button)}
   
-  trait(:trait) {
-                  email_text_field
-                  password_text_field
-                  login_button
-                }
+  trait(:trait) { email_text_field }
   
   def login_with(email, password)
     query(email_text_field, {:setText => email})
