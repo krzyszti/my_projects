@@ -33,6 +33,5 @@ end
 Then (/^I should be able to change time$/) do
   
   @duration_screen.change_time
-  sleep 10
   
 end
