@@ -5,7 +5,6 @@ module Endomondo
       def login_click
         assert
         wait { @login_button.click }
-        workout_page.assert
       end
       
       def fill_form(email, password)

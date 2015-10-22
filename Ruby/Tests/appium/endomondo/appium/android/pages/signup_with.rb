@@ -1,12 +1,17 @@
 module Endomondo
   module SignupWithPage
     class << self
-      #
-      # asserts
-      #
+
+      def signup_with_email_click
+        assert
+        wait { @signup_with_email.click }
+        signup_with_email_page.assert
+      end
 
       def assert_exists
-        text_exact 'Signup with Email'
+        @signup_with_email = find_element(:id, 'email')
+        @signup_with_facebook = find_element(:id, 'facebook')
+        @signup_with_google = find_element(:id, 'plus')
       end
 
       def assert
