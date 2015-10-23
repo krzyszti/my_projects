@@ -3,28 +3,33 @@ module Endomondo
     class << self
       
       def motivation_main_button_click
+        assert
         wait { @motivation_main_button.click }
       end
       
       def sport_main_button_click
+        assert
         wait { @sport_main_button.click }
       end
       
       def workout_button_click
+        assert
         wait { @workout_button.click }
       end
       
       def stop_countdown_click
+        assert
         wait { @stop_countdown.click }
       end
       
       def more_options_click
+        assert
         wait { @more_options.click }
       end
       
       def navigation_button_click
+        assert
         wait { @navigation_button.click }
-        navigation_page.assert
       end
       
       def assert_countdown

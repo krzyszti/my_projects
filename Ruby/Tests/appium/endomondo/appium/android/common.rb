@@ -13,3 +13,11 @@ def back_click
   sleep 2
   back
 end
+
+def login
+  login_page.login_click
+  login_with_page.login_with_email_click
+  login_with_email_page.fill_form(USERS[:valid][:email], USERS[:valid][:password])
+  login_with_email_page.login_click
+  workout_page.assert
+end
