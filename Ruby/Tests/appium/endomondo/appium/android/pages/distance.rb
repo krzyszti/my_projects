@@ -9,8 +9,9 @@ module Endomondo
       
       def assert_exists
         @ok_button = find_element(:id, 'button1')
-        @minor_picker = find_elements(:class, 'EditText')[0]
-        @major_picker = find_elements(:class, 'EditText')[1]
+        pickers = find_elements(:xpath,"//*[@class='android.widget.NumberPicker']")
+        @minor_picker = pickers[1]
+        @major_picker = pickers[0]
       end
 
       def assert
@@ -18,8 +19,8 @@ module Endomondo
       end
       
       def set_distance
-        @minor_picker.sendKeys(10)
-        @major_picker.sendKeys(10)
+        swipe_element(@minor_picker, -40, 500)
+        swipe_element(@major_picker, -40, 500)
       end
       
     end

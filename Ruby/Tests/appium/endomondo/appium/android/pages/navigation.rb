@@ -8,7 +8,7 @@ module Endomondo
       end
       
       def assert_exists
-        @history = find_element(:xpath,"//*[@class='android.widget.TextView'and @text='History']")
+        @history = text('History')
       end
 
       def assert

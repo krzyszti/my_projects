@@ -9,15 +9,16 @@ module Endomondo
       
       def assert_exists
         @ok_button = find_element(:id, 'button1')
-        @hours_picker = find_element(:id, 'HoursPicker')
-        @minutes_picker = find_element(:id, 'MinutesPicker')
-        @seconds_picker = find_element(:id, 'SecondsPicker')
+        pickers = find_elements(:xpath,"//*[@class='android.widget.NumberPicker']")
+        @hours_picker = pickers[0]
+        @minutes_picker = pickers[1]
+        @seconds_picker = pickers[2]
       end
       
       def set_duration
-        @hours_picker.sendKeys(10)
-        @minutes_picker.sendKeys(10)
-        @seconds_picker.sendKeys(10)
+        swipe_element(@hours_picker, -40, 500)
+        swipe_element(@minutes_picker, -40, 500)
+        swipe_element(@seconds_picker, -40, 500)
       end
       
       def assert
