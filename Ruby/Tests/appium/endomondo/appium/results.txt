@@ -1,0 +1,179 @@
+Loading one spec: C:/Users/user/projects/my_projects/Ruby/Tests/appium/endomondo/appium/android/specs/./logout.rb
+spec | 1 | android/specs/logout.rb:5
+←[32m  t 'spec' do
+    reset
+    login
+←[32mdef login
+←[32m  login_page.login_click
+  login_with_page.login_with_email_click
+  login_with_email_page.fill_form(USERS[:valid][:email], USERS[:valid][:password])
+  login_with_email_page.login_click
+  workout_page.assert
+end
+    workout_page.more_options_click
+    more_options_page.exit_click
+spec | 1 | android/specs/logout.rb:17
+  t 'spec' do
+    reset
+    login
+def login
+←[32m  login_page.login_click
+←[32m  login_with_page.login_with_email_click
+←[32m  login_with_email_page.fill_form(USERS[:valid][:email], USERS[:valid][:password])
+←[32m  login_with_email_page.login_click
+←[32m  workout_page.assert
+←[32mend
+    workout_page.more_options_click
+←[32m    more_options_page.settings_click
+    settings_page.profile_click
+    profile_page.logout_click
+
+
+Finished in 1 min 16 secs
+
+2 runs, 0 assertions, 0 failures, 0 errors, 0 skips
+
+
+
+Loading one spec: C:/Users/user/projects/my_projects/Ruby/Tests/appium/endomondo/appium/android/specs/./login.rb
+spec | 1 | android/specs/login.rb:5
+←[32m  t 'spec' do
+    login_page.login_click
+    login_with_page.login_with_email_click
+    login_with_email_page.fill_form(USERS[:invalid][:email], USERS[:invalid][:password])
+    login_with_email_page.login_click
+    invalid_login_page.assert
+spec | 1 | android/specs/login.rb:18
+  t 'spec' do
+    reset
+    login_page.login_click
+←[32m    login_with_page.login_with_email_click
+    login_with_email_page.fill_form(USERS[:valid][:email], USERS[:valid][:password])
+←[32m    login_with_email_page.login_click
+←[32m    workout_page.assert
+
+
+Finished in 47 secs
+
+2 runs, 0 assertions, 0 failures, 0 errors, 0 skips
+
+
+
+Loading one spec: C:/Users/user/projects/my_projects/Ruby/Tests/appium/endomondo/appium/android/specs/./signup.rb
+spec | 1 | android/specs/signup.rb:5
+←[32m  t 'spec' do
+    login_page.signup_click
+    signup_with_page.signup_with_email_click
+    signup_with_email_page.fill_form(USERS[:invalid][:name], USERS[:invalid][:email], USERS[:invalid][:password], USERS[:invalid][:gender])
+    signup_with_email_page.signup_click
+    invalid_login_page.assert
+spec | 1 | android/specs/signup.rb:18
+  t 'spec' do
+    reset
+    login_page.signup_click
+←[32m    signup_with_page.signup_with_email_click
+←[32m    signup_with_email_page.fill_form(USERS[:valid][:name], USERS[:valid][:email], USERS[:valid][:password], USERS[:valid][:gender]
+)
+←[32m    signup_with_email_page.signup_click
+←[32m    workout_page.assert
+
+
+Finished in 1 min 1 sec
+
+2 runs, 0 assertions, 0 failures, 0 errors, 0 skips
+
+
+
+Loading one spec: C:/Users/user/projects/my_projects/Ruby/Tests/appium/endomondo/appium/android/specs/./workout.rb
+spec | 1 | android/specs/workout.rb:5
+←[32m  t 'spec' do
+    reset
+←[0m    login
+←[32mdef login
+←[32m  login_page.login_click
+  login_with_page.login_with_email_click
+  login_with_email_page.fill_form(USERS[:valid][:email], USERS[:valid][:password])
+  login_with_email_page.login_click
+  workout_page.assert
+end
+    workout_page.navigation_button_click
+    navigation_page.history_click
+    history_page.plus_button_click
+    manual_entry_page.distance_click
+    distance_page.set_distance
+def swipe_element(element, offset, duration)
+←[32m  sleep 1
+  start_x = element.location.x
+  start_y = element.location.y
+←[32m  end_x = start_x + offset
+  end_y = start_y
+←[32m  swipe({'duration': duration, 'start_x': start_x, 'start_y': start_y, 'end_x': end_x, 'end_y': end_y})
+end
+def swipe_element(element, offset, duration)
+  sleep 1
+  start_x = element.location.x
+←[32m  start_y = element.location.y
+←[32m  end_x = start_x + offset
+  end_y = start_y
+  swipe({'duration': duration, 'start_x': start_x, 'start_y': start_y, 'end_x': end_x, 'end_y': end_y})
+end
+    distance_page.ok_button_click
+←[32m    manual_entry_page.duration_click
+    duration_page.set_duration
+def swipe_element(element, offset, duration)
+  sleep 1
+←[32m  start_x = element.location.x
+←[32m  start_y = element.location.y
+←[32m  end_x = start_x + offset
+  end_y = start_y
+←[0m  swipe({'duration': duration, 'start_x': start_x, 'start_y': start_y, 'end_x': end_x, 'end_y': end_y})
+end
+def swipe_element(element, offset, duration)
+  sleep 1
+←[0m  start_x = element.location.x
+←[32m  start_y = element.location.y
+←[32m  end_x = start_x + offset
+  end_y = start_y
+  swipe({'duration': duration, 'start_x': start_x, 'start_y': start_y, 'end_x': end_x, 'end_y': end_y})
+end
+def swipe_element(element, offset, duration)
+  sleep 1
+←[32m  start_x = element.location.x
+←[32m  start_y = element.location.y
+←[32m  end_x = start_x + offset
+  end_y = start_y
+←[32m  swipe({'duration': duration, 'start_x': start_x, 'start_y': start_y, 'end_x': end_x, 'end_y': end_y})
+end
+    duration_page.ok_button_click
+←[32m    manual_entry_page.save_button_click
+spec | 1 | android/specs/workout.rb:25
+  t 'spec' do
+    reset
+    login
+def login
+  login_page.login_click
+←[32m  login_with_page.login_with_email_click
+←[32m  login_with_email_page.fill_form(USERS[:valid][:email], USERS[:valid][:password])
+←[32m  login_with_email_page.login_click
+←[32m  workout_page.assert
+←[32mend
+    workout_page.workout_button_click
+    workout_page.workout_button_click
+←[32m    workout_page.assert_stop
+spec | 1 | android/specs/workout.rb:38
+  t 'spec' do
+    reset
+    login
+←[0mdef login
+  login_page.login_click
+←[32m  login_with_page.login_with_email_click
+←[32m  login_with_email_page.fill_form(USERS[:valid][:email], USERS[:valid][:password])
+←[32m  login_with_email_page.login_click
+←[32m  workout_page.assert
+←[32mend
+    workout_page.assert_countdown
+
+
+Finished in 2 mins 30 secs
+
+3 runs, 0 assertions, 0 failures, 0 errors, 0 skips
