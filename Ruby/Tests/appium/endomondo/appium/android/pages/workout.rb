@@ -20,6 +20,7 @@ module Endomondo
       
       def more_options_click
         wait { @more_options.click }
+        more_options_page.assert
       end
       
       def navigation_button_click
@@ -42,7 +43,7 @@ module Endomondo
         @more_options = find_element(:xpath,"//*[@class='android.widget.ImageView'and @content-desc='More options']")
         @navigation_button = find_element(:xpath,"//*[@class='android.widget.ImageButton'and @content-desc='Navigation drawer']")
       end
-
+      
       def assert
         wait { assert_exists }
       end

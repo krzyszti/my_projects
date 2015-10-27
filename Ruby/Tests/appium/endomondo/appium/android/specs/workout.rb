@@ -39,7 +39,6 @@ describe 'Verify that stop button does not show when the user starts workout' do
     
     reset
     login
-    workout_page.workout_button_click
     workout_page.assert_countdown
     
   end

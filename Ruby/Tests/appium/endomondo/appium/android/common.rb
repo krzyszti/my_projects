@@ -23,10 +23,10 @@ def login
 end
 
 def swipe_element(element, offset, duration)
+  sleep 1
   start_x = element.location.x
   start_y = element.location.y
   end_x = start_x + offset
   end_y = start_y
   swipe({'duration': duration, 'start_x': start_x, 'start_y': start_y, 'end_x': end_x, 'end_y': end_y})
-  sleep 1
 end
