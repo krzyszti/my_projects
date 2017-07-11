@@ -1,4 +1,4 @@
-'''
+"""
 My friend wrote solution to lowest_index in c++
 this program will be an example of rewrote algorithm in python
 
@@ -19,7 +19,7 @@ int solution(vector<int> &A) {
     }
     return lastIndex;
 }
-'''
+"""
 
 
 def solution(A):

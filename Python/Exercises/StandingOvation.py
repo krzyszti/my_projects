@@ -1,6 +1,8 @@
-'''
+"""
 Problem from
 https://code.google.com/codejam/contest/6224486/dashboard
+
+Both small and large outputs were accepted by the Judge
 
 It's opening night at the opera, and your friend is the prima donna (the lead female singer). You will not be in the audience, but you want to make sure she receives a standing ovation -- with every audience member standing up and clapping their hands for her.
 
@@ -15,37 +17,34 @@ Input
 5 110011
 0 1
 
-	
+
 Output
 Case #1: 0
 Case #2: 1
 Case #3: 2
 Case #4: 0
-'''
+"""
 import sys
 
-def prim(n, number):
-    n = int(n)
-    tab = str(number)
-    tab = list(tab)
-    i = 0
-    sum = 0
-    while i < n:
-        sum += int(tab[i])
-        i += 1
-    f = n - sum
-    if f < 0:
-        f = 0
-    return f
+
+def prim(number):
+    result = 0
+    if number.count('0') != 0:
+        number_list = list(map(int, number))
+        for i, n in enumerate(number_list):
+            if not n:
+                if sum(number_list[:i]) + result <= i:
+                    result += 1
+    return result
+
 
 def main():
-    T = int(input())
-    i = 0
-    while i < T:
-        inp = input()
-        n, number = inp.split(' ')
-        f = prim(n, number)
-        print("Case #"+str(i+1)+": "+str(f))
+    t = int(input())
+    i = 1
+    while i <= t:
+        n, number = input().split(' ')
+        f = prim(number)
+        print("Case #{}: {}".format(i, f))
         i += 1
 
 

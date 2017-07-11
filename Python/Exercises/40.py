@@ -20,6 +20,7 @@ brown
 Correct!
 '''
 import random, sys
+
 lst = ['Brown', 'green', 'blue']
 
 
@@ -34,6 +35,7 @@ def main(lst):
         guess = input("Guess the word: ")
     print("Correct!")
     return 0
+
 
 if __name__ == '__main__':
     sys.exit(main(lst))

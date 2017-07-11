@@ -21,5 +21,6 @@ def main():
             if palindrome(word):
                 print(word)
 
+
 if __name__ == '__main__':
     sys.exit(main())

@@ -40,12 +40,13 @@ def check(brackets):
 
 
 def main():
-    tests_number = 10   # positive int
-    max_len = 3        # minimum 1
+    tests_number = 10  # positive int
+    max_len = 3  # minimum 1
     for i in range(0, tests_number):
         test_subject = generate(max_len)
         print(test_subject, check(test_subject))
     return 0
+
 
 if __name__ == '__main__':
     sys.exit(main())

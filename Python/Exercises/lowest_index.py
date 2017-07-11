@@ -1,4 +1,4 @@
-'''
+"""
 https://codility.com/programmers/challenges/alpha2010
 
 A non-empty zero-indexed array A consisting of N integers is given. The first covering prefix of array A is the smallest integer P such that 0≤P<N and such that every value that occurs in array A also occurs in sequence A[0], A[1], ..., A[P].
@@ -45,17 +45,17 @@ Elements of input arrays can be modified.
 # 76% solution
 def solution(A):
     i = -1
-    while i>=-len(A):
-        if A[:i].count(A[i])==0:
+    while i >= -len(A):
+        if A[:i].count(A[i]) == 0:
             return A.index(A[i])
-        i-=1
+        i -= 1
 ---
 # 88% solution
 def solution(A):
     i = -1
-    while i>=-len(A):
+    while i >= -len(A):
         if A[i] in A[:i]:
-            i-=1
+            i -= 1
         else:
             return A.index(A[i])
 ---
@@ -68,16 +68,20 @@ def solution(A):
         if not(v in A):
             return a.index(v)
         i += 1
-'''
+"""
 from collections import Counter
+
+
 def solution(A):
     v = Counter()
+    i = 0
     for e in A:
-        if not(e in v):
+        if not (e in v):
             v[e] += 1
             i = e
     return A.index(i)
 
-A = [2, 2, 1, 0, 1, 8, 9, 9,9]
+
+A = [2, 2, 1, 0, 1, 8, 9, 9, 9]
 
 print(solution(A))

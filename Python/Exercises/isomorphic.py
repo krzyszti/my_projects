@@ -1,4 +1,4 @@
-''' 
+"""
 Excercise from https://leetcode.com/problems/isomorphic-strings/
 Given two strings s and t, determine if they are isomorphic.
 Two strings are isomorphic if the characters in s can be replaced to get t.
@@ -7,10 +7,12 @@ For example,
 Given "egg", "add", return true.
 Given "foo", "bar", return false.
 Given "paper", "title", return true.
-'''
+"""
+
 
 class Solution(object):
-    def isIsomorphic(self, s, t):
+    @staticmethod
+    def isIsomorphic(s, t):
         """
         :type s: str
         :type t: str
@@ -20,11 +22,14 @@ class Solution(object):
             return False
         h = {}
         for i, letter in enumerate(s):
-        	if letter in h:
-        	    if h[letter] != t[i]:
-         	        return False
-                elif not t[i] in h.itervalues():
-        	        h[letter] = t[i]
-        	else:
-        	    return False
+            if letter in h:
+                if h[letter] != t[i]:
+                    return False
+            elif not t[i] in h.values():
+                h[letter] = t[i]
+            else:
+                return False
         return True
+
+
+print(Solution.isIsomorphic('egg', ' add'))

@@ -27,3 +27,7 @@ def code(string_1, string_2):
             tmp+=str(input_values[0][1])
         result.append(tmp)
     return result
+
+
+def code(code_1, code_2):
+    result = []

@@ -1,4 +1,4 @@
-'''
+"""
 source: https://codility.com/demo/take-sample-test/tape_equilibrium/
 
 
@@ -52,21 +52,22 @@ Complexity:
         expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 
 Elements of input arrays can be modified.
-'''
+"""
 
 
 def solution(A):
-    s = sum(A)-A[0]
+    s = sum(A) - A[0]
     r = A[0]
-    result = abs(s-r)
-    for i in range(1,len(A)-1):
+    result = abs(s - r)
+    for i in range(1, len(A) - 1):
         s -= A[i]
         r += A[i]
-        dif = abs(s-r)
+        dif = abs(s - r)
         if dif < result:
             result = dif
     return result
 
-A = [3,1,2,4,3]
+
+A = [3, 1, 2, 4, 3]
 
 print(solution(A))

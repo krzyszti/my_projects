@@ -54,16 +54,17 @@ Complexity:
         expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
 '''
 
+
 def solution(A):
     i = 0
     l = 0
     p = sum(A)
-    while i < len(A):  
+    while i < len(A):
         p -= A[i]
         if l == p:
             return i
         l += A[i]
-        i+=1
+        i += 1
     return -1
 
 
