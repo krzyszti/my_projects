@@ -1,21 +1,21 @@
-'''
+"""
 I made this application because I cannot use GIMP that well.
 In fact it was the most iritating experience for me, trying to make tileset of 50 images.
 One pixel mistake and you can do it again.
 That is why I created this.
 It creates a tileset.png out of all png files located in \tiles\ directory.
-'''
+"""
 from PIL import Image
 import sys
 
 
 class Tileset(object):
     def __init__(self):
-        #x and y is the width and height of the tile
+        # x and y is the width and height of the tile
         (self.x, self.y) = (70, 70)
-        #width represents how many tiles we want to have in one line
+        # width represents how many tiles we want to have in one line
         self.width = 10
-        #separators will separate tiles from each other
+        # separators will separate tiles from each other
         (self.xs, self.ys) = (1, 1)
 
     @staticmethod
@@ -32,7 +32,7 @@ class Tileset(object):
         import math
         tiles = self.load_tiles()
         x = self.x * self.width + self.width * self.xs - self.xs
-        row = math.ceil(len(tiles)/self.width)
+        row = math.ceil(len(tiles) / self.width)
         y = self.y * row + row * self.ys - self.ys
         new_im = Image.new('RGBA', (x, y))
         a = 0
@@ -61,6 +61,7 @@ def main():
     tileset = new.create_image()
     tileset.save("tileset.png", "PNG")
     return 0
+
 
 if __name__ == '__main__':
     sys.exit(main())

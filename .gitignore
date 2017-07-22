@@ -67,3 +67,5 @@ target/
 
 # ruby irb history
 .irb-history
+
+.DS_Store

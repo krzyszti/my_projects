@@ -68,9 +68,9 @@ class Player(pygame.sprite.Sprite):
         for cell in game.tilemap.layers['triggers'].collide(new, 'blockers'):
             blockers = cell["blockers"]
             if 'l' in blockers and last.right <= cell.left < new.right:
-                new.right = cell.left-2
+                new.right = cell.left - 2
             if 'r' in blockers and last.left >= cell.right > new.left:
-                new.left = cell.right+2
+                new.left = cell.right + 2
             if 't' in blockers and last.bottom <= cell.top < new.bottom:
                 self.resting = True
                 new.bottom = cell.top
