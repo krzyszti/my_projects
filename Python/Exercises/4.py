@@ -11,5 +11,12 @@ def vowel(c):
     return c in vowels
 
 
-print(vowel('a'))
-print(vowel('b'))
+assert (vowel('a'))
+assert (not vowel('b'))
+
+
+def vowel_lambda(x): return x in vowels  # vowel_lambda = lambda x: x in vowels
+
+
+assert (vowel_lambda('a'))
+assert (not vowel_lambda('b'))

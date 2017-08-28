@@ -17,10 +17,17 @@ Tip: Check out the string method endswith().
 
 
 def make_3sg_form(verb):
-    if verb.endswith('y'):
-        result = verb[:-1:] + 'ies'
-    elif verb.endswith(('o', 'ch', 's', 'sh', 'x', 'z')):
-        result = verb[:-1:] + 'es'
+    ends_with = verb[-1]
+    if ends_with == 'y':
+        return '{}ies'.format(verb[:-1])
+    elif ends_with in ('o', 's', 'x', 'z') or ends_with == 'h' and verb[-2] in ('s' or 'c'):
+        return '{}es'.format(verb)
     else:
-        result = verb + 's'
-    return result
+        return '{}s'.format(verb)
+
+
+assert 'tries' == make_3sg_form('try')
+assert 'brushes' == make_3sg_form('brush')
+assert 'tesths' == make_3sg_form('testh')
+assert 'tests' == make_3sg_form('test')
+assert 'testshes' == make_3sg_form('testsh')

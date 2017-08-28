@@ -6,11 +6,7 @@ and prints the line to the screen if it is a palindrome.
 import sys
 
 
-def palindrome(word):
-    if word == word[::-1]:
-        return True
-    else:
-        return False
+def palindrome(word): return word == word[::-1]
 
 
 def main():

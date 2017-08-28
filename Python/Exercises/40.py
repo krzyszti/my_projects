@@ -21,21 +21,30 @@ Correct!
 '''
 import random, sys
 
-lst = ['Brown', 'green', 'blue']
+WORDS = ('Brown', 'green', 'blue')
 
 
-def main(lst):
-    word = random.choice(lst).lower()
-    l = list(word)
-    random.shuffle(l)
-    anagram_word = ''.join(l)
-    print("Word anagram: " + anagram_word)
+def random_word(words): return random.choice(words).lower()
+
+
+def shuffle_word(word):
+    random.shuffle(word)
+    return ''.join(word)
+
+
+def game():
+    word = random_word(WORDS)
+    anagram_word = shuffle_word(list(word))
+    print("Word anagram: {}".format(anagram_word))
     guess = input("Guess the word: ")
     while guess.lower() != word:
         guess = input("Guess the word: ")
     print("Correct!")
-    return 0
+
+
+def main():
+    game()
 
 
 if __name__ == '__main__':
-    sys.exit(main(lst))
+    sys.exit(main())

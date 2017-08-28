@@ -11,6 +11,8 @@ For example, histogram([4, 9, 7]) should print the following:
 """
 
 
-def histogram(lst):
-    for item in lst:
-        print(item * '*')
+def histogram(h_list, character='*'):
+    [print(i * character) for i in h_list]
+
+
+histogram([4, 9, 7])
