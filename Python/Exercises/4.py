@@ -6,6 +6,11 @@ True if it is a vowel, False otherwise.
 
 vowels = ('a', 'e', 'i', 'o', 'u', 'y')
 
+try:
+    raise AssertionError
+    raise ZeroDivisionError
+except (ZeroDivisionError, AssertionError) as e:
+    print(12341234, e)
 
 def vowel(c):
     return c in vowels
