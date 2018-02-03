@@ -1,6 +1,6 @@
 """
 My friend wrote solution to lowest_index in c++
-this program will be an example of rewrote algorithm in python
+this program is an example of same algorithm in python
 
 Author: Maciej Zieniuk
 int solution(vector<int> &A) {
@@ -28,8 +28,11 @@ def solution(A):
         a = A[i]
         if v[a] == -1:
             v[a] = i
-    lastIndex = -1
+    last_index = -1
     for i in v:
-        if i > lastIndex:
-            lastIndex = i
-    return lastIndex
+        if i > last_index:
+            last_index = i
+    return last_index
+
+
+assert solution([2, 2, 1, 0, 1]) == 3

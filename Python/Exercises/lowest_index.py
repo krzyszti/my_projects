@@ -69,19 +69,16 @@ def solution(A):
             return a.index(v)
         i += 1
 """
-from collections import Counter
 
 
-def solution(A):
-    v = Counter()
-    i = 0
-    for e in A:
-        if not (e in v):
-            v[e] += 1
-            i = e
-    return A.index(i)
+def solution(array):
+    counter = {}
+    result_index = 0
+    for index, element in enumerate(array):
+        if not (element in counter):
+            counter[element] = 1
+            result_index = index
+    return result_index
 
 
-A = [2, 2, 1, 0, 1, 8, 9, 9, 9]
-
-print(solution(A))
+assert solution([2, 2, 1, 0, 1]) == 3

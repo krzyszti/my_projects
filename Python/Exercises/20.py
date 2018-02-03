@@ -14,4 +14,4 @@ def translate(lst):
 test_results = translate(['merry', 'christmas'])
 assert 'jul' in test_results
 assert 'god' in test_results
-assert not 'och' in test_results
+assert 'och' not in test_results

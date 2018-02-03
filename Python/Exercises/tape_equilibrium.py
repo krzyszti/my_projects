@@ -55,11 +55,11 @@ Elements of input arrays can be modified.
 """
 
 
-def solution(A):
-    s = sum(A) - A[0]
-    r = A[0]
-    result = abs(s - r)
-    for i in range(1, len(A) - 1):
+def solution(array):
+    right = sum(array)
+    left = 0
+    result = abs(right - left)
+    for e in array:
         s -= A[i]
         r += A[i]
         dif = abs(s - r)
@@ -68,6 +68,4 @@ def solution(A):
     return result
 
 
-A = [3, 1, 2, 4, 3]
-
-print(solution(A))
+assert solution([3, 1, 2, 4, 3]) == 1

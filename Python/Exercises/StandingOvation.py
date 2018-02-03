@@ -48,5 +48,30 @@ def main():
         i += 1
 
 
+def prim_test():
+    test_cases = 4
+    test_input = [
+        '4 11111',
+        '1 09',
+        '5 110011',
+        '0 1'
+    ]
+    i = 0
+    results = []
+    expected_results = [
+        'Case #1: 0',
+        'Case #2: 1',
+        'Case #3: 2',
+        'Case #4: 0'
+    ]
+    while i < test_cases:
+        n, number = test_input[i].split(' ')
+        f = prim(number)
+        i += 1
+        results.append("Case #{}: {}".format(i, f))
+    assert results == expected_results
+
+
 if __name__ == "__main__":
+    prim_test()
     sys.exit(main())

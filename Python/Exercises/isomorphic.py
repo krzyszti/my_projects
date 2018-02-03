@@ -12,24 +12,26 @@ Given "paper", "title", return true.
 
 class Solution(object):
     @staticmethod
-    def isIsomorphic(s, t):
+    def is_isomorphic(word_1, word_2):
         """
-        :type s: str
-        :type t: str
+        :type word_1: str
+        :type word_2: str
         :rtype: bool
         """
-        if len(s) != len(t):
+        if len(word_1) != len(word_2):
             return False
-        h = {}
-        for i, letter in enumerate(s):
-            if letter in h:
-                if h[letter] != t[i]:
+        characters = {}
+        for i, letter in enumerate(word_1):
+            if letter in characters:
+                if characters[letter] != word_2[i]:
                     return False
-            elif not t[i] in h.values():
-                h[letter] = t[i]
-            else:
+            elif word_2[i] in characters.values():
                 return False
+            else:
+                characters[letter] = word_2[i]
         return True
 
 
-print(Solution.isIsomorphic('egg', ' add'))
+assert Solution.is_isomorphic('egg', 'add')
+assert not Solution.is_isomorphic('foo', 'bar')
+assert Solution.is_isomorphic('paper', 'title')

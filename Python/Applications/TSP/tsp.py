@@ -46,7 +46,7 @@ class Evolution(object):
         result = []
         for i in range(0, len(lst) - 1, 2):
             one = lst[i]
-            two = lst[i+1]
+            two = lst[i + 1]
             point = random.randint(0, len(one) - 1)
             one[point:], two[point:] = (two[point:], one[point:])
             result.append(one)
@@ -126,8 +126,8 @@ class Window(pyglet.window.Window):
 
     def print_path(self):
         path = self.tsp.best[0]
-        for i in range(0, len(path)-1):
-            self.line(path[i], path[i+1])
+        for i in range(0, len(path) - 1):
+            self.line(path[i], path[i + 1])
         self.line(path[-1], path[0])
 
 

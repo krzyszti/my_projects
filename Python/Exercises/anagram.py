@@ -20,7 +20,7 @@ def is_anagram(word_1, word_2):
 
 
 assert (is_anagram('raska', 'rakas'))  # Anagrams
-assert (is_anagram('raska', 'Rakas'))  # Anagrams with capital leters
+assert (is_anagram('raska', 'Rakas'))  # Anagrams with capital letters
 assert (is_anagram('raska', 'rak as'))  # Anagrams with spaces
 assert not (is_anagram('pies', 'kot'))  # Words with different len
 assert not (is_anagram('pies', 'kots'))  # Words with same length but not anagrams

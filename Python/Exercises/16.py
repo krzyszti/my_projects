@@ -7,7 +7,6 @@ that are longer than n.
 WORDS_LIST = ('1', '12', '123', '1234', '12345')
 
 
-
 # List Comprehension
 def filter_long_words(words, n):
     return [w for w in words if len(w) > n]

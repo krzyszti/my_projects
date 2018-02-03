@@ -1,4 +1,4 @@
-'''
+"""
 SOURCE: https://codility.com/demo/take-sample-test/
 python demo
 
@@ -52,22 +52,18 @@ Complexity:
 
         expected worst-case time complexity is O(N);
         expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
-'''
+"""
 
 
-def solution(A):
-    i = 0
-    l = 0
-    p = sum(A)
-    while i < len(A):
-        p -= A[i]
-        if l == p:
+def solution(array):
+    left = 0
+    right = sum(array)
+    for i, value in enumerate(array):
+        right -= value
+        if left == right:
             return i
-        l += A[i]
-        i += 1
+        left += value
     return -1
 
 
-A = [-1, 3, -4, 5, 1, -6, 2, 1]
-
-print(solution(A))
+assert solution([-1, 3, -4, 5, 1, -6, 2, 1]) in (1, 3, 7)
